@@ -28,23 +28,14 @@ public class Main
   /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
   public void loadCountries() 
   {
-    // Open the data file - do not change
+    // Open the data file. Please note that the file structure we're working with requires the full file path as shown here unlike what you saw in runestone where the file name was sufficient.
     File file = new File("/workspaces/Countries/workspace/countries-data.csv");
-    Scanner scan = null;
-    try {
-      scan = new Scanner(file);
-    } catch(FileNotFoundException e) { 
-        System.out.println("File not found");     
-    }
     
-    // Write a for loop that goes through the countryArray.
-    // for(int i ....) {
-    // Do the following inside the loop
-      String input = scan.nextLine();
-      String[] data = input.split(",");
-      System.out.println("Read in " + data[0]);
-      // inside the loop, create a new Country using your constructor with 4 arguments and pass in data[0], data[1], data[2], data[3] as arguments.
-     // inside the loop, set countryArray[i] to the created Country object
+    //create a scanner and a loop to read from the file until you've read everything.
+    // inside the loop you'll need to read in a line from the file and use "split" to break up the data into destinct parts.
+    // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
+    // inside the loop, set countryArray[i] to the created Country object
+    //after running this method your array should contain all 10 countries from inside the countries-data file.
      
     
   }
@@ -86,7 +77,7 @@ public class Main
 
 
 
-  /* Do NOT change anything below here */
+  /* You are not required to change anythign below here. You do so at your own risk! */
   /* The Main() constructor is finished and will construct the GUI */
 public Main() {
     jFrame.setLayout(new FlowLayout());
