@@ -1,8 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
 import java.io.*;
+import java.util.*;
+import javax.swing.*;
 
 public class Main 
 {
@@ -17,6 +17,7 @@ public class Main
   private ImageIcon img;
   private JLabel imageLabel;
   private JLabel outputLabel;
+  private JTextArea userInput;
   
   public static void main(String[] args) {
     // Create the GUI
@@ -36,6 +37,12 @@ public class Main
     // create a new Country using your constructor with 4 arguments (each of the arguments is a different part of the line you've read in)
     // inside the loop, set countryArray[i] to the created Country object
     //after running this method your array should contain all 10 countries from inside the countries-data file.
+    Scanner scan = new Scanner(file);
+    int i = 0;
+    while (scan.hasNext()) {
+
+
+    }
      
     
   }
@@ -99,6 +106,8 @@ public Main() {
         outputLabel = new JLabel();
         jFrame.add(imageLabel);
         jFrame.add(outputLabel);
+        userInput = new JTextArea(1, 40);
+        jFrame.add(userInput);
         jFrame.setVisible(true);
         // add event listener for button click
         reviewButton.addActionListener(new ActionListener() {
