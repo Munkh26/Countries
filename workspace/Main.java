@@ -27,7 +27,7 @@ public class Main
   }
 
   /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
-  public void loadCountries() 
+  public void loadCountries()
   {
     // Open the data file. Please note that the file structure we're working with requires the full file path as shown here unlike what you saw in runestone where the file name was sufficient.
     File file = new File("/workspaces/Countries/workspace/countries-data.csv");
@@ -40,10 +40,13 @@ public class Main
     Scanner scan = new Scanner(file);
     int i = 0;
     while (scan.hasNext()) {
-
-
+      String test = scan.nextLine();
+      String[] att = test.split(",");
+      countryArray[i] = new Country(att[0], att[1], att[2], att[3]);
+      System.out.println(countryArray[i]);
+      i++;
     }
-     
+    scan.close();
     
   }
 
