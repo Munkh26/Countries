@@ -29,6 +29,7 @@ public class Main
   /* loadCountries() reads in the data from the countries-data.csv file and fills in the countryArray with data. You need to add the loop that reads in the country data into the array. */
   public void loadCountries()
   {
+    try{
     // Open the data file. Please note that the file structure we're working with requires the full file path as shown here unlike what you saw in runestone where the file name was sufficient.
     File file = new File("/workspaces/Countries/workspace/countries-data.csv");
     
@@ -43,20 +44,24 @@ public class Main
       String test = scan.nextLine();
       String[] att = test.split(",");
       countryArray[i] = new Country(att[0], att[1], att[2], att[3]);
-      System.out.println(countryArray[i]);
       i++;
     }
     scan.close();
-    
+  }
+  catch (IOException e) {
+    System.out.println("An error occurred.");
+  }
   }
 
   /* showCountry() will show the image associated with the current country. It should get the country at index from the countryArray. It should use its get method to get its image file name and use the code below to put the image in the GUI.
   */
   public void showCountry() {
     // Get the country at index from countryArray
-    
+    Country c = countryArray[index];
+
     // Use its get method to get the its image file name and save it into imagefile variable below instead of worldmap.jpg.
     String imagefile = "worldmap.jpg";
+    imagefile = c.image();
     // Use the following code to create an new Image Icon and put it into the GUI
     img = new ImageIcon("/workspaces/Countries/workspace/"+imagefile);
     imageLabel.setIcon(img);
