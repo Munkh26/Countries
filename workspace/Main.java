@@ -70,12 +70,18 @@ public class Main
   /* nextButton should increment index. If the index is greater than 9, reset it back to 0. Clear the outputLabel to empty string using setText, and call showCountry();*/
   public void nextButtonClick()
   {
-    
+    index++;
+    if (index > 9) {
+      index = 0;
+    }
+    outputLabel.setText("");
+    showCountry();
   }
   
   /* reviewButton should get the country at index from the countryArray, call its toString() method and save the result, print it out with System.out.println and as an argument to outputLabel.setText( text to print out ); */
   public void reviewButtonClick()
   {
+    outputLabel.setText(countryArray[index].toString());
      
   }
 
@@ -83,11 +89,13 @@ public class Main
   */
   public void quizButtonClick()
   {
-    Scanner scan = new Scanner(System.in); 
-    
-    
-    
+    String answer = userInput.getText();
+    outputLabel.setText("What country is this?");
+    if (answer.equals(countryArray[index].name())) {
+      outputLabel.setText("Correct!");
+    }
   }
+
 
 
 
