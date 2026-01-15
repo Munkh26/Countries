@@ -90,9 +90,11 @@ public class Main
   public void quizButtonClick()
   {
     String answer = userInput.getText();
-    outputLabel.setText("What country is this?");
     if (answer.equals(countryArray[index].name())) {
       outputLabel.setText("Correct!");
+    }
+    else {
+      outputLabel.setText("Incorrect");
     }
   }
 
