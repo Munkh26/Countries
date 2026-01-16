@@ -42,5 +42,5 @@ public class Country
   public String toString() {
     return name + "'s capital is " + capital + " and its primary language is " + language;
   } 
-
+  
 }

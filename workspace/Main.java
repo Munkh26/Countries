@@ -48,6 +48,7 @@ public class Main
     }
     scan.close();
   }
+
   catch (IOException e) {
     System.out.println("An error occurred.");
   }
@@ -82,7 +83,6 @@ public class Main
   public void reviewButtonClick()
   {
     outputLabel.setText(countryArray[index].toString());
-     
   }
 
   /* quizButton should clear the outputLabel (outputLabel.setText to empty string), get the country at index from countryArray, print out a question about it like What country is this? and/or What's this country's capital?. Get the user's answer using scan.nextLine() and check if it is equal to the country's data using its get methods and print out correct or incorrect.
@@ -90,13 +90,14 @@ public class Main
   public void quizButtonClick()
   {
     String answer = userInput.getText();
-    outputLabel.setText("");
+    outputLabel.setText("What Country is this?");
     if (answer.equals(countryArray[index].name())) {
       outputLabel.setText("Correct!");
     }
-    else {
+    else if (!(outputLabel.equals("")) && !(answer.equals(""))) {
       outputLabel.setText("Incorrect");
     }
+    userInput.setText("");
   }
 
 
